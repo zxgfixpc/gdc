@@ -1,0 +1,68 @@
+#! /bin/bash
+
+echo "start gdc build ..."
+
+# 检查Git是否安装
+if ! command -v git &> /dev/null
+then
+    echo "请安装git"
+    exit 1
+fi
+# 检查Go是否安装
+if ! command -v go &> /dev/null
+then
+    echo "请安装go"
+    exit 1
+fi
+
+# 参数 $1 绝对路径
+if [ "$#" -ne 2 ]; then
+  echo "请输入项目路径和模块名称，例如：gdc xxx/project_path module_name"
+  exit 1
+fi
+
+dir_path="$1"
+module_name="$2"
+origin_module_name="xxxxxx"
+remote_git_path="git@github.com:zxgfixpc/gdc.git"
+
+#创建项目目录
+if [ ! -d "$dir_path" ]; then
+  mkdir -p "$dir_path"
+  if [ ! -d "$dir_path" ]; then
+    echo "make dir err, $dir_path"
+    exit 1
+  fi
+fi
+
+cd "$dir_path"
+
+# clone项目
+mkdir tmp_project
+cd tmp_project
+git clone "$remote_git_path"
+cd ../
+
+# 删除无用的代码
+echo "delete invalid file ... \n"
+rm -rf ./tmp_project/gdc/gdc
+rm -rf ./tmp_project/gdc/.git
+rm -rf ./tmp_project/gdc/.idea
+
+# 替换module名称
+echo "replace ${origin_module_name} to ${module_name} ... \n"
+find tmp_project -type f -name '*.go' -exec sed -i '' "s/${origin_module_name}/${module_name}/g" {} \;
+find tmp_project -type f -name '*.mod' -exec sed -i '' "s/${origin_module_name}/${module_name}/g" {} \;
+
+# 展开
+mv ./tmp_project/gdc/* ./
+
+# 删除临时文件
+rm -rf ./tmp_project
+
+echo "finish!"
+
+
+
+
+

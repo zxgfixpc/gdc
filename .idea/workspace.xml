@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ce51e415-4b53-4812-81cd-eadcdfcd39af" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ginsugar/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ginsugar/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger/zap.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/zap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/hello.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/hello.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +60,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/gin-web-server-cli" />
       <recent name="$PROJECT_DIR$/project" />
       <recent name="$PROJECT_DIR$/lib/trace" />
       <recent name="$PROJECT_DIR$/lib/errors" />
-      <recent name="$PROJECT_DIR$/lib/infra" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build xxxxxx">
+  <component name="RunManager" selected="Go Build.go build gdc">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="gdc" />
       <working_directory value="$PROJECT_DIR$" />
@@ -105,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build xxxxxx" />
         <item itemvalue="Go Build.go build gdc" />
+        <item itemvalue="Go Build.go build xxxxxx" />
       </list>
     </recent_temporary>
   </component>

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"gdc/conf"
 	"gdc/lib/infra"
-	"gdc/lib/log"
+	"gdc/lib/logger"
 	"net/http"
 	"os"
 	"os/signal"
@@ -20,20 +20,21 @@ func Start() {
 	ctx := context.TODO()
 
 	config := &conf.ServerConf{}
-	if err := conf.Parser(config, conf.ServerPath); err != nil {
+	if err := conf.Parser(config, conf.ServerConfPath); err != nil {
 		panic(err)
 	}
-
-	g := gin.New()
-
-	g.Use(log.LoggerMiddleware())
-	g.Use(gin.Recovery())
-
+	// 初始化日志
+	if err := logger.InitLog(); err != nil {
+		panic(err)
+	}
 	// 初始化基础组件
 	if err := infra.Start(ctx); err != nil {
 		panic(err)
 	}
 
+	g := gin.New()
+	g.Use(logger.LogMiddleware())
+	g.Use(gin.Recovery())
 	registerRouter(g)
 
 	server := &http.Server{
@@ -44,7 +45,7 @@ func Start() {
 		fmt.Println("listen port:", config.Port)
 		if err := server.ListenAndServe(); err != nil {
 			if !errors.Is(err, http.ErrServerClosed) {
-				log.Panic(ctx, err)
+				logger.Panic(ctx, err.Error())
 			}
 		}
 	}()
@@ -54,9 +55,9 @@ func Start() {
 	<-quitSig
 
 	if err := server.Shutdown(ctx); err != nil {
-		log.ErrorF(ctx, "shutdown err:%v", err)
+		logger.ErrorF(ctx, "shutdown err:%v", err)
 	} else {
-		log.Info(ctx, "shutdown success")
+		logger.Info(ctx, "shutdown success")
 	}
 
 	quitSvr := make(chan bool, 1)
@@ -64,9 +65,9 @@ func Start() {
 
 	select {
 	case <-time.After(time.Duration(config.ShutDownWait) * time.Second):
-		log.Error(ctx, "shutdown timeout")
+		logger.Error(ctx, "shutdown timeout")
 	case <-quitSvr:
-		log.Info(ctx, "shutdown success")
+		logger.Info(ctx, "shutdown success")
 	}
 }
 
@@ -79,4 +80,6 @@ func shutdown(ctx context.Context, c chan bool) {
 
 	// 关闭基础组件等长连接
 	infra.Shutdown(ctx)
+	// 日志
+	logger.Shutdown()
 }

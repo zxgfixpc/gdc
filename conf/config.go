@@ -8,16 +8,26 @@ import (
 )
 
 const (
-	ServerPath = "./conf/server.yaml"
+	ServerConfPath = "./conf/server.yaml"
+	LogConfPath    = "./conf/log.yaml"
 )
 
 type (
-	Config struct {
-	}
-
 	ServerConf struct {
 		Port         string `yaml:"port"`
 		ShutDownWait int64  `yaml:"shutdown_wait"`
+	}
+
+	LogConf struct {
+		Zap []ZapLogConf `yaml:"zap_log"`
+	}
+
+	ZapLogConf struct {
+		Level      string `yaml:"level"`
+		Filename   string `yaml:"file_name"`
+		MaxSize    int    `yaml:"max_size"`
+		MaxAge     int    `yaml:"max_age"`
+		MaxBackups int    `yaml:"max_backups"`
 	}
 )
 

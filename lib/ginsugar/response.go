@@ -2,7 +2,7 @@ package ginsugar
 
 import (
 	"gdc/lib/errors"
-	"gdc/lib/log"
+	"gdc/lib/logger"
 	"gdc/lib/trace"
 	"net/http"
 
@@ -23,7 +23,7 @@ func buildJsonResult(c *gin.Context, httpCode int, result interface{}, err error
 		Data:    result,
 	}
 	if err != nil {
-		log.Error(c.Request.Context(), err)
+		logger.Error(c.Request.Context(), err.Error())
 
 		ret.Errno, ret.ErrMsg = errors.CodeMsg(err)
 		if ret.Errno == 0 {

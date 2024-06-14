@@ -1,0 +1,13 @@
+zap_log:
+  -
+    level: info
+    file_name: ./logs/%v.log
+    max_size: 10
+    max_age: 20
+    max_backups: 10
+  -
+    level: error
+    file_name: ./logs/%v.err.log
+    max_size: 10
+    max_age: 20
+    max_backups: 10

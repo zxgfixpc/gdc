@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"gdc/lib/ginsugar"
-	"gdc/service"
+	"_gdc_/lib/ginsugar"
+	"_gdc_/service"
 
 	"github.com/gin-gonic/gin"
 )

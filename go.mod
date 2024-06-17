@@ -1,4 +1,4 @@
-module gdc
+module _gdc_
 
 go 1.22.4
 

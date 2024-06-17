@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce51e415-4b53-4812-81cd-eadcdfcd39af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/infra/mysql/mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/1718359179.err.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/hello.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/hello.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpserver/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ginsugar/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ginsugar/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/middleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger/zap.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/zap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/hello.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/hello.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,24 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ask.go.tool.to.install.GoImportsTaskConsumer&quot;: &quot;true&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/zhaodu/go/src/gdc&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "NewWatcherDialog.advanced.open": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ask.go.tool.to.install.GoImportsTaskConsumer": "true",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/zhaodu/go/src/gdc",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Go"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -66,7 +74,7 @@
       <recent name="$PROJECT_DIR$/lib/errors" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build gdc">
+  <component name="RunManager" selected="Go Build.go build _gdc_">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="gdc" />
       <working_directory value="$PROJECT_DIR$" />
@@ -75,6 +83,15 @@
       <package value="gdc" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build _gdc_" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gdc" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="_gdc_" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build gdc" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -108,6 +125,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build _gdc_" />
         <item itemvalue="Go Build.go build gdc" />
         <item itemvalue="Go Build.go build xxxxxx" />
       </list>

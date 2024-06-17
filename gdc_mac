@@ -23,7 +23,7 @@ fi
 
 dir_path="$1"
 module_name="$2"
-origin_module_name="xxxxxx"
+origin_module_name="_gdc_"
 remote_git_path="git@github.com:zxgfixpc/gdc.git"
 
 #创建项目目录

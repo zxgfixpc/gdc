@@ -4,14 +4,15 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"gdc/conf"
-	"gdc/lib/infra"
-	"gdc/lib/logger"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"_gdc_/conf"
+	"_gdc_/lib/infra"
+	"_gdc_/lib/logger"
 
 	"github.com/gin-gonic/gin"
 )

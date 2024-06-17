@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"_gdc_/lib/errors"
-	"_gdc_/lib/logger"
+	"_gdc_/lib/log"
 	"_gdc_/lib/trace"
 
 	"github.com/gin-gonic/gin"
@@ -24,7 +24,7 @@ func buildJsonResult(c *gin.Context, httpCode int, result interface{}, err error
 		Data:    result,
 	}
 	if err != nil {
-		logger.Error(c.Request.Context(), err.Error())
+		log.Error(c.Request.Context(), err.Error())
 
 		ret.Errno, ret.ErrMsg = errors.CodeMsg(err)
 		if ret.Errno == 0 {

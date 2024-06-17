@@ -45,9 +45,10 @@ cd ../
 
 # 删除无用的代码
 echo "delete invalid file ... \n"
-rm -rf ./tmp_project/gdc/gdc
+rm -rf ./tmp_project/gdc/gdc_mac
 rm -rf ./tmp_project/gdc/.git
 rm -rf ./tmp_project/gdc/.idea
+rm -rf ./tmp_project/gdc/logs/*
 
 # 替换module名称
 echo "replace ${origin_module_name} to ${module_name} ... \n"

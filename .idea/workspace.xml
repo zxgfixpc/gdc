@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce51e415-4b53-4812-81cd-eadcdfcd39af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/infra/mysql/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpserver/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/httpserver/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ginsugar/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ginsugar/response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logger/zap.go" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logger/zap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/hello.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/hello.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/1718359179.err.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

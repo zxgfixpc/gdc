@@ -11,8 +11,6 @@ import (
 	"gorm.io/plugin/dbresolver"
 )
 
-var Client *gorm.DB
-
 type ConfInfo struct {
 	MaxOpenConns      int  `yaml:"max_open_conns"`
 	MaxIdleConns      int  `yaml:"max_idle_conns"`
@@ -30,7 +28,7 @@ type DBConf struct {
 }
 
 func InitMysql(_ context.Context, conf *DBConf) (*gorm.DB, error) {
-	if conf == nil || conf.Logger == nil {
+	if conf == nil {
 		return nil, fmt.Errorf("input conf must item nil")
 	}
 
@@ -71,4 +69,13 @@ func InitMysql(_ context.Context, conf *DBConf) (*gorm.DB, error) {
 	)
 
 	return dbWrite, nil
+}
+
+func Shutdown(g *gorm.DB) error {
+	db, err := g.DB()
+	if err != nil {
+		return err
+	}
+
+	return db.Close()
 }

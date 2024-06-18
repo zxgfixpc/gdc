@@ -10,6 +10,7 @@ import (
 const (
 	ServerConfPath = "./conf/server.yaml"
 	LogConfPath    = "./conf/log.yaml"
+	MysqlConfPath  = "./conf/mysql.yaml"
 )
 
 type (

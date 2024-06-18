@@ -24,7 +24,7 @@ func buildJsonResult(c *gin.Context, httpCode int, result interface{}, err error
 		Data:    result,
 	}
 	if err != nil {
-		log.Error(c.Request.Context(), err.Error())
+		log.Error(c.Request.Context(), err)
 
 		ret.Errno, ret.ErrMsg = errors.CodeMsg(err)
 		if ret.Errno == 0 {

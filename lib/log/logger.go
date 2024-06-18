@@ -7,8 +7,9 @@ import (
 	"_gdc_/lib/trace"
 )
 
-func Debug(ctx context.Context, msg string) {
+func Debug(ctx context.Context, args ...interface{}) {
 	traceID := trace.GetTraceIDByCtx(ctx)
+	msg := fmt.Sprint(args)
 	zapLogger.Debugw(msg, "trace_id", traceID)
 }
 
@@ -18,8 +19,9 @@ func DebugF(ctx context.Context, format string, args ...interface{}) {
 	zapLogger.Debugw(msg, "trace_id", traceID)
 }
 
-func Info(ctx context.Context, msg string) {
+func Info(ctx context.Context, args ...interface{}) {
 	traceID := trace.GetTraceIDByCtx(ctx)
+	msg := fmt.Sprint(args)
 	zapLogger.Infow(msg, "trace_id", traceID)
 }
 
@@ -29,8 +31,9 @@ func InfoF(ctx context.Context, format string, args ...interface{}) {
 	zapLogger.Infow(msg, "trace_id", traceID)
 }
 
-func Warn(ctx context.Context, msg string) {
+func Warn(ctx context.Context, args ...interface{}) {
 	traceID := trace.GetTraceIDByCtx(ctx)
+	msg := fmt.Sprint(args)
 	zapLogger.Warnw(msg, "trace_id", traceID)
 }
 
@@ -40,8 +43,9 @@ func WarnF(ctx context.Context, format string, args ...interface{}) {
 	zapLogger.Warnw(msg, "trace_id", traceID)
 }
 
-func Error(ctx context.Context, msg string) {
+func Error(ctx context.Context, args ...interface{}) {
 	traceID := trace.GetTraceIDByCtx(ctx)
+	msg := fmt.Sprint(args)
 	zapLogger.Errorw(msg, "trace_id", traceID)
 }
 
@@ -51,8 +55,9 @@ func ErrorF(ctx context.Context, format string, args ...interface{}) {
 	zapLogger.Errorw(msg, "trace_id", traceID)
 }
 
-func Panic(ctx context.Context, msg string) {
+func Panic(ctx context.Context, args ...interface{}) {
 	traceID := trace.GetTraceIDByCtx(ctx)
+	msg := fmt.Sprint(args)
 	zapLogger.Panicw(msg, "trace_id", traceID)
 }
 
@@ -62,6 +67,6 @@ func PanicF(ctx context.Context, format string, args ...interface{}) {
 	zapLogger.Panicw(msg, "trace_id", traceID)
 }
 
-func InitLog() error {
+func StartLog() error {
 	return initZapLog()
 }

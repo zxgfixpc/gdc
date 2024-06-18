@@ -25,7 +25,7 @@ func Start() {
 		panic(err)
 	}
 	// 初始化日志
-	if err := log.InitLog(); err != nil {
+	if err := log.StartLog(); err != nil {
 		panic(err)
 	}
 	// 初始化基础组件
@@ -39,14 +39,14 @@ func Start() {
 	registerRouter(g)
 
 	server := &http.Server{
-		Addr:    ":" + config.Port,
+		Addr:    fmt.Sprintf(":%v", config.Port),
 		Handler: g,
 	}
 	go func() {
 		fmt.Println("listen port:", config.Port)
 		if err := server.ListenAndServe(); err != nil {
 			if !errors.Is(err, http.ErrServerClosed) {
-				log.Panic(ctx, err.Error())
+				log.PanicF(ctx, "server listen fail, err: %v", err)
 			}
 		}
 	}()

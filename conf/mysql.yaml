@@ -1,7 +1,7 @@
 write_dsn: zdu:zdu123456@tcp(127.0.0.1:3306)/mydatabase?charset=utf8mb4&parseTime=True&loc=Local
 reads_dsn:
   - zdu:zdu123456@tcp(127.0.0.1:3306)/mydatabase_slave1?charset=utf8mb4&parseTime=True&loc=Local
-  - zdu:zdu123456@tcp(127.0.0.1:3306)/mydatabase_slave1?charset=utf8mb4&parseTime=True&loc=Local
+  - zdu:zdu123456@tcp(127.0.0.1:3306)/mydatabase_slave2?charset=utf8mb4&parseTime=True&loc=Local
 conf:
   max_open_conns: 10
   max_idle_conns: 5

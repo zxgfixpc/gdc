@@ -6,6 +6,7 @@ import (
 
 	"_gdc_/conf"
 	"_gdc_/lib/infra/mysql"
+	"_gdc_/lib/log"
 )
 
 func Start(ctx context.Context) error {
@@ -15,6 +16,8 @@ func Start(ctx context.Context) error {
 	if err = conf.Parser(mysqlConf, conf.MysqlConfPath); err != nil {
 		return err
 	}
+	mysqlConf.Logger = log.NewGormLogger()
+
 	if MysqlClient, err = mysql.InitMysql(ctx, mysqlConf); err != nil {
 		return err
 	}

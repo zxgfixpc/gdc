@@ -60,11 +60,11 @@ func getEncoder() zapcore.Encoder {
 func getLogWriter(logConf conf.ZapLogConf) zapcore.WriteSyncer {
 	// zap log不支持日志文件切割，使用Lumberjack
 	lumberJackLogger := &lumberjack.Logger{
-		Filename:   fmt.Sprintf(logConf.Filename, time.Now().Unix()), // 日志文件的位置
-		MaxSize:    logConf.MaxSize,                                  // 在进行切割之前，日志文件的最大大小（以MB为单位）
-		MaxBackups: logConf.MaxBackups,                               // 保留旧文件的最大个数
-		MaxAge:     logConf.MaxAge,                                   // 保留旧文件的最大天数
-		Compress:   false,                                            // 是否压缩/归档旧文件
+		Filename:   fmt.Sprintf(logConf.Filename, time.Now().Format("200601021504")), // 日志文件的位置
+		MaxSize:    logConf.MaxSize,                                                  // 在进行切割之前，日志文件的最大大小（以MB为单位）
+		MaxBackups: logConf.MaxBackups,                                               // 保留旧文件的最大个数
+		MaxAge:     logConf.MaxAge,                                                   // 保留旧文件的最大天数
+		Compress:   false,                                                            // 是否压缩/归档旧文件
 	}
 
 	syncFile := zapcore.AddSync(lumberJackLogger)
